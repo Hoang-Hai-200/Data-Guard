@@ -20,4 +20,6 @@ EOF
 
 sqlplus / as sysdba << EOF
 alter system set db_unique_name=uprimary scope=spfile;
+shut immediate;
+startup open;
 EOF
