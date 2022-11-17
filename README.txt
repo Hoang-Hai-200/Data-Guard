@@ -9,12 +9,13 @@ primary_setup2.sh
 B2: Standby
 
 1. standby_setup_dataguard.sh  (create file tnsnames.ora, listener.ora, duplicate.sql
-2. startup nomount pfile='/home/oracle/pfile_primary.ora'
-3. create spfile from pfile='/home/oracle/pfile_primary.ora'
-4. shut immediate ( startup with spfile to config parameter)
-5. startup nomount
-6. nohupRman.sh
-7. alter database open;
+2. cp orapw $ORACLE_HOME/dbs
+. startup nomount pfile='/home/oracle/pfile_primary.ora'
+. create spfile from pfile='/home/oracle/pfile_primary.ora'
+. shut immediate ( startup with spfile to config parameter)
+. startup nomount
+. nohupRman.sh
+. alter database open;
 
  ### Primary
      ---- > B3_a: Configuration with data guard broker
