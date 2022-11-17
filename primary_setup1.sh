@@ -42,4 +42,6 @@ SID_LIST_LISTENER =
       (ENVS = "TNS_ADMIN=/u01/app/oracle/product/19.0.0/dbhome_1/network/admin")
     )
   )
+
+ADR_BASE_LISTENER = /u01/app/oracle
 EOFLISTENER
