@@ -17,18 +17,25 @@ B2: Standby
 . nohupRman.sh
 . alter database open;
 
- ### Primary
-     ---- > B3_a: Configuration with data guard broker
-     |        primary_setup3_broker.sh
-     |  
-     OR
-     |
-     |
-     ---- > B3_b : Configuration manual
-              1. alter system set log_archive_config='dg_config=(uprimary,ustandby)';
-              2. alter system set log_archive_dest_2='service=standbytns valid_for=(online_logfile,all_roles) db_unique_name=ustandby';
-              3. alter system set log_archive_dest_state_2=enable;
-            
-  B4: 
+3.a Configuration manual
+          ### Primary
+       1. alter system set log_archive_config='dg_config=(uprimary,ustandby)';
+       2. alter system set log_archive_dest_2='service=standbytns valid_for=(online_logfile,all_roles) db_unique_name=ustandby';
+       3. alter system set log_archive_dest_state_2=enable;
+
+         ### Standby
+       1. alter system set log_archive_config='dg_config=(uprimary,ustandby)';
+       2. alter system set log_archive_dest_2=’service=primarytns valid_for=(online_logfiles,primary_roles) db_unique_name=uprimary’;
+       3. altter database recover managed standby database using current logfile disconnect from session;
+       4. Done
+       
+3.b Configuration data broker 
+       oracle@primary : ./primary_setup3_broker.sh
+       Done
+        
+##########################################################################33
+
+  Option standby : 
       alter database recover managed standby database cancel;
       alter database recover managed standby database using current logfile disconnect from session;
+      
