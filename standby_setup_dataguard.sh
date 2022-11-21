@@ -53,3 +53,4 @@ cat > /home/oracle/scripts1/duplicate.sql << EOFDUP
 run {
 duplicate target database for standby from active database dorecover nofilenamecheck;
 }
+EOFDUP
