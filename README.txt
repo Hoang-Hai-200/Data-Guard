@@ -2,20 +2,20 @@
 
 B1: Primary
 
-primary_setup1.sh
-primary_setup2.sh
+          oracle@primary : ./primary_setup1.sh
+          oracle@primary : ./primary_setup2.sh
 
 
 B2: Standby
 
 1. standby_setup_dataguard.sh  (create file tnsnames.ora, listener.ora, duplicate.sql
 2. cp orapw $ORACLE_HOME/dbs
-. startup nomount pfile='/home/oracle/pfile_primary.ora'
-. create spfile from pfile='/home/oracle/pfile_primary.ora'
-. shut immediate ( startup with spfile to config parameter)
-. startup nomount
-. nohupRman.sh
-. alter database open;
+          . sql > startup nomount pfile='/home/oracle/pfile_primary.ora'
+          . sql > create spfile from pfile='/home/oracle/pfile_primary.ora'
+          . sql > shut immediate ( startup with spfile to config parameter)
+          . sql > startup nomount
+          . oracle@standby : ./nohupRman.sh
+          . sql > alter database open;
 
 3.a Configuration manual
           ### Primary
