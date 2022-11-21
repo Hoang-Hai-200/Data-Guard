@@ -2,7 +2,7 @@
 
 cat > /u01/app/oracle/product/19.0.0/dbhome_1/network/admin/tnsnames.ora << EOFTNSNAMES 
 LISTENER =
-  (ADDRESS = (PROTOCOL = TCP)(HOST = primary)(PORT = 1521))
+  (ADDRESS = (PROTOCOL = TCP)(HOST = primaryos)(PORT = 1521))
 
 standbytns  =
   (DESCRIPTION =
