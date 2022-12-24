@@ -1,5 +1,13 @@
 # Data-Guard
 
+B0:
+          /etc/hosts :
+                    192.168.24.115 standbyos
+                    192.168.24.117 primaryos
+
+
+
+
 B1: Primary
 
           oracle@primary : ./primary_setup1.sh
