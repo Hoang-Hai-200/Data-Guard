@@ -47,3 +47,6 @@ B2: Standby
       alter database recover managed standby database cancel;
       alter database recover managed standby database using current logfile disconnect from session;
       
+      
+      
+      select process, status from v$managed_standby;
