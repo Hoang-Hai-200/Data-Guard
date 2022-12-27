@@ -17,6 +17,11 @@ B1: Primary
 B2: Standby
 
 1. standby_setup_dataguard.sh  (create file tnsnames.ora, listener.ora, duplicate.sql
+          . check connection in StandbyOS:
+                    rman target sys/admin@primarytns
+                    rman auxiliary sys/admin@standbytns  (using SID instead of SERVICE_NAME in tnsnames.ora)
+                    
+
 2. cp orapw $ORACLE_HOME/dbs
           . sql > startup nomount pfile='/home/oracle/pfile_primary.ora'
           . sql > create spfile from pfile='/home/oracle/pfile_primary.ora'
