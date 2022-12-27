@@ -10,7 +10,7 @@ standbytns  =
     (ADDRESS = (PROTOCOL = TCP)(HOST = standbyos)(PORT = 1521))
     (CONNECT_DATA =
       (SERVER = DEDICATED)
-      (SERVICE_NAME = db1)
+      (SID = db1)
     )
   )
 
