@@ -19,7 +19,7 @@ B2: Standby
 1. standby_setup_dataguard.sh  (create file tnsnames.ora, listener.ora, duplicate.sql
           . check connection in StandbyOS:
                     rman target sys/admin@primarytns
-                    rman auxiliary sys/admin@standbytns  (using SID instead of SERVICE_NAME in tnsnames.ora)
+                    rman auxiliary sys/admin@standbytns  (using SID instead of SERVICE_NAME in tnsnames.ora of standbyOS) <<<---***************************************
                     
 
 2. cp orapw $ORACLE_HOME/dbs
