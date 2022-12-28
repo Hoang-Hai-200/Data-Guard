@@ -52,6 +52,14 @@ B2: Standby
       alter database recover managed standby database cancel;
       alter database recover managed standby database using current logfile disconnect from session;
       
+  Manager dg broker :    
+      
+      show configuration;
+      show configuration verbose;
       
       
+      show database <database_name>;
       select process, status from v$managed_standby;
+
+
+  
