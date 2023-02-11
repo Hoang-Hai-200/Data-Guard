@@ -7,4 +7,4 @@
 export PATH=/usr/sbin:/usr/local/bin:$PATH
 export PATH=$ORACLE_HOME/bin:$PATH 
 
-nohup rman target sys/admin@primarytns auxiliary sys/admin@standbytns cmdfile=/home/oracle/scripts/duplicate12.sql log=/home/oracle/scripts/duplicate.log &
+nohup rman target sys/admin@primarytns auxiliary sys/admin@standbytns cmdfile=/home/oracle/scripts/duplicate.sql log=/home/oracle/scripts/duplicate.log &
